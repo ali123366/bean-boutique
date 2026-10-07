@@ -1,0 +1,16 @@
+const searchInput = document.getElementById("coffeeSearch");
+const coffeeCards = document.querySelectorAll(".coffee-card");
+searchInput.addEventListener("input", function() {
+const searchText = searchInput.value.toLowerCase();
+
+coffeeCards.forEach(function(card) {
+const coffeeName = card.querySelector("h3").textContent.toLowerCase();
+if (coffeeName.includes(searchText)) {
+card.style.display = "block";
+} else {
+card.style.display = "none";
+}
+});
+
+}
+});

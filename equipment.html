@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brewing Equipment - Bean Boutique</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="logo">
+<h1>Bean Boutique</h1>
+<p>Speciality Coffee & Community</p>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="coffee.html">Coffee Selection</a>
+<a href="equipment.html">Brewing Equipment</a>
+<a href="events.html">Events & Workshops</a>
+<a href="cart.html">Shopping Cart</a>
+<a href="subscription.html">Offers & Subscriptions</a>
+</nav>
+</header>
+
+<section class="equipment-grid">
+<h2>Our Brewing Equipment</h2>
+<article class="equipment-card">
+<div class="equipment-icon">☕</div>
+<h3>French Press</h3>
+<img src="IMAGES/french-press.jpg"
+alt="French Press Coffee Maker"
+width="180">
+<P>A simple brewing method that produces a rich and full-bodied cup.</p>
+<p><strong>Usage Tip:</strong> Use coarse coffee grounds and steep for about four minutes.</p>
+<p><strong>Price: £25.00</strong></p>
+<button type="button" class="button" onclick="addToCart('French Press', 25)">
+Add to Cart
+</button>
+</article>
+<article class="equipment-card">
+<div class="equipment-icon">⚙️</div>
+<h3>Pour Over Dripper</h3>
+<img src="IMAGES/pour-over.jpg" alt="Pour Over Coffee Dripper" width="180">
+<p>A manual brewer that gives you control over coffee strength and flavour.</p>
+<p><strong>Usage Tip:</strong> Pour hot water slowly in a circular motion.</p>
+<p><strong>Price: £20.00</strong></p>
+<button type="button" class="button" onclick="addToCart('Pour Over Dripper', 20)">
+Add to Cart
+</button>
+</article>
+<article class="equipment-card">
+<div class="equipment-icon">☕</div>
+<h3>Espresso Machine</h3>
+<img src="IMAGES/espresso-machine.jpg"
+alt="Espresso Machine" width="180">
+<p>A powerful machine for preparing espresso-based coffee drinks at home.</p>
+<p><strong>Usage Tip:</strong> Use freshly ground coffee and clean the machine regularly.</p>
+<p><strong>Price: £120.00</strong></p>
+<button type="button" class="button" onclick="addToCart('Espresso Machine', 120)">
+Add to Cart
+</button>
+</article>
+
+<article class="equipment-card">
+<div class="equipment-icon">⚙️</div>
+<h3>Coffee Grinder</h3>
+<img src="IMAGES/coffee-grinder.jpg"
+alt="Coffee Grinder" width="180">
+<p>A quality grinder helps produce evenly ground coffee for better flavour.</p>
+<p><strong>Usage Tip:</strong> Choose the grind size according to your brewing method.</p>
+<p><strong>Price: £45.00</strong></p>
+<button type="button" class="button" onclick="addToCart('Coffee Grinder', 45)">
+Add to Cart
+</button>
+</article>
+</section>
+<section class="equipment-tips">
+<h2>Brewing Tips</h2>
+<p>Use fresh coffee beans, clean your equipment regularly and follow the recommended brewing method for the best results.</p>
+</section>
+
+<footer>
+<p>&copy; 2026 Bean Boutique. All Rights Reserved.</p>
+<p>Fresh Coffee . Great Community . Better Moments</p>
+</footer>
+<script src="js/script.js"></script>
+<script>
+function addToCart(name, price) {
+let cart= JSON.parse(localStorage.getItem("cart")) || [];
+cart.push({
+name: name,
+price: price
+});
+localStorage.setItem("cart", JSON.stringify(cart));
+alert(name + "added to cart successfully!");
+}
+</script>
+</body>
+</html>
+
+

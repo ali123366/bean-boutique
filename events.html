@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events & Workshops - Bean Boutique</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<h1>Bean Boutique</h1>
+<p>Speciality Coffee & Community</p>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="coffee.html">Coffee Selection</a>
+<a href="equipment.html">Brewing Equipment</a>
+<a href="events.html">Events & Workshops</a>
+<a href="cart.html">Shopping Cart</a>
+<a href="subscriptions.html">Offers & Subscriptions</a>
+</nav>
+</header>
+
+<main>
+<section class="events-intro">
+<h2>Events & Workshops</h2>
+<p>Join our coffee community and learn more about brewing, tasting and speciality coffee.</p>
+</section>
+
+<section class="events-grid">
+<h2>Upcoming Events & Workshops</h2>
+<article class="event-card">
+<div class="event-icon">☕</div>
+<h3>Coffee Tasting </h3>
+<img src="IMAGES/coffee-tasting.jpg"
+alt="Coffee Tasting Event" width="200">
+<p>Explore different coffee flavours and learn how to identify tasting notes.</p>
+<p><strong>Date:</strong>20 September 2026</p>
+</article>
+<article class="event-card">
+<div class="event-icon">⚙️</div>
+<h3>Brewing Workshop</h3>
+<img src="IMAGES/coffee-workshop.jpg"
+alt="Coffee Brewing Workshop" width="200">
+<p>Learn simple brewing techniques and how to get the best flavour from your coffee.</p>
+<p><strong>Date:</strong> 27 September 2026</p>
+</article>
+
+<article class="event-card">
+<div class="event-icon">🌱</div>
+<h3>Meet the Roaster</h3>
+<img src="IMAGES/coffee-roasting.jpg"
+alt="Coffee Roasting Event" width="200">
+<p>Discover how coffee beans are selected, roasted and prepared for brewing.</p>
+<p><strong>Date:</strong> 4 October 2026</p>
+</article>
+</section>
+
+<section class="registration">
+<h2>Register for an Event</h2>
+<p>Complete the form below to register for one of our upcoming events.</p>
+<form id="eventRegistrationForm">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" name="firstName" required>
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" name="lastName" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<label for="event">Select Event:</label>
+<select id="event" name="event" required>
+<option value="">Coffee-Tasting</option>
+<option value="brewing-workshop">Brewing Workshop</option>
+<option value="meet-the-roaster">Meet the Roaster</option>
+</select>
+<button type="submit">Register Now</button>
+</form>
+<script>
+document.getElementById("eventRegistrationForm").addEventListener("submit", function(event) {
+event.preventDefault();
+alert("Thank you! Your event registration has been received.");
+});
+</script>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Bean Boutique. All Rights Reserved.</p>
+<p>Fresh Coffee . Great Community . Better Moments</p>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([51.5074, -0.1278], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+L.marker([51.5074, -0.1278]).addTo(map)
+.bindPopup('Bean Boutique Coffee Shop')
+.openPopup();
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

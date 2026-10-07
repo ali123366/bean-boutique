@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial -scale=1.0">
+<title>Shopping Cart - Bean Boutique</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<h1>Bean Boutique</h1>
+<p>Speciality Coffee & Community</p>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="coffee.html">Coffee Selection</a>
+<a href="equipment.html">Brewing Equipment</a>
+<a href="events.html">Events & Workshops</a>
+<a href="cart.html">Shopping Cart</a>
+<a href="subscription.html">Offers & Subscriptions</a>
+</nav>
+</header>
+
+<main>
+<section class="cart-intro">
+<h2>Shopping Cart</h2>
+<p>Review your selected coffee and brewing equipment before checkout.</p>
+</section>
+<section class="cart-items">
+<div class="cart-item">
+<h3>House Blend</h3>
+<img src="IMAGES/house-blend.jpg"
+alt="House Blend Coffee">
+<p>Price: £12.00</p>
+<button type="button">Add to Basket</button>
+</div>
+
+<div class="cart-item">
+<h3>Espresso Roast</h3>
+<img src="IMAGES/espresso-roast.jpg"
+alt="Espresso Roast Coffee">
+<p>Price: £14.00</p>
+<button type="button">Add to Basket</button>
+</div>
+<div class="cart-item">
+<h3>French Press</h3>
+<img src="IMAGES/french-press.jpg"
+alt="French Press">
+<p>Price: £25.00</p>
+<button type="button">Add to Basket</button>
+</div>
+<div class="cart-item">
+<h3>Coffee Grinder</h3>
+<img src="IMAGES/coffee-grinder.jpg"
+alt="Coffee Grinder">
+<p>Price: £45.00</p>
+<button type="button">Add to Basket</button>
+</div>
+
+</section>
+<section class="cart-total">
+<h2>Basket Summary</h2>
+<div id="cartItems">
+<p>House Blend - £12.00</p>
+<p>Espresso Roast - £14.00</p>
+<p>French Press - £25.00</p>
+<p>Coffee Grinder - £45.00</p>
+</div>
+<p><strong>Total: £0.00</strong></p>
+</section>
+
+</main>
+<footer>
+<p>&copy; 2026 Bean Boutique. All Rights Reserved.</p>
+<p>Fresh Coffee . Great Community . Better Moments</p>
+</footer>
+<script src="JS/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const buttons = document.querySelectorAll(".cart-item button");
+const totalText = document.querySelector(".cart-total strong");
+let total = 0;
+buttons.forEach(function(button) {
+button.addEventListener("click", function() {
+const item = button.parentElement;
+const priceText = item.querySelector("p").textContent;
+const price = parseFloat(priceText.replace("Price: £", ""));
+total = total + price;
+totalText.textContent = "Total: £" + total.toFixed(2);
+button.textContent = "Added ✓";
+});
+});
+});
+</script>
+<script>
+function showCartItems() {
+let cart= JSON.parse(localStorage.getItem("cart")) || [];
+let cartItems= document.getElementById("cartItems");
+cartItems.innerHTML= "";
+if (cart.length === 0) {
+cartItems.innerHTML= "<p>No products selected yet.</p>';
+return;
+}
+cart.forEach(function(item) {
+cartItems.innerHTML += "<p>" + item.name + "-£" + item.price.toFixed(2) + "</p>";
+});
+}
+showCartItems();
+let cart= JSON.parse(localStorage.getItem("cart")) || [];
+let total= 0;
+cart.forEach(function(item) { 
+total += item.price;
+})
+document.querySelector(".cart-total strong").textContent= "Total: £" + total.toFixed(2);
+</script>
+</body>
+</html>
+

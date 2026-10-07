@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Selection - Bean Boutique</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body> 
+<header>
+<div class="logo">
+<h1>Bean Boutique</h1>
+<p>Speciality Coffee & Community</p>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="coffee.html">Coffee Selection</a>
+<a href="equipment.html">Brewing Equipment</a>
+<a href="events.html">Events & Workshops</a>
+<a href="cart.html">Shopping Cart</a>
+<a href="subscriptions.html">Offers & Subscriptions</a>
+</nav>
+</header>
+
+<main>
+<section class="coffee-selection" data-aos="fade-up">
+<h2>Our Coffee Selection</h2>
+<p><span id="typed-text"></span></p>
+<p>Discover our carefully selected blends and single-origin coffees.</p>
+</section>
+<section class="coffee-grid">
+<h2>Our Coffee Collection</h2>
+<article class="coffee-card">
+<div class="coffee-icon">☕</div>
+<h3>House Blend</h3>
+<img src="IMAGES/house-blend.jpg"
+alt="House Blend Coffee" width="300">
+<p>Balanced flavor with smooth chocolate and nutty notes.</p>
+<p><strong>Price: £12.00</strong></p>
+</article>
+
+<article class="coffee-card">
+<div class="coffee-icon">☕</div>
+<h3>Espresso Roast</h3>
+<img src="IMAGES/espresso-roast.jpg"
+alt="Espresso Roast Coffee" width="300">
+<p>Rich and bold coffee with deep caramel and cocoa notes.</p>
+<p><strong>Price: £14.00</strong></p>
+</article>
+
+<article class="coffee-card">
+<div class="coffee-icon">☕</div>
+<h3>Colombian Single Origin</h3>
+<img src="IMAGES/colombian-coffee.jpg"
+alt="Colombian Single Origin Coffee"
+width="300">
+<p>Bright and smooth coffee with fruity and sweet tasting notes.</p>
+<p><strong>Price: £16.00</strong></p>
+</article>
+
+<article class="coffee-card">
+<div class="coffee-icon">☕</div>
+<h3>Mocha Blend</h3>
+<img src="IMAGES/mocha-blend.jpg"
+alt="Mocha Blend Coffee" width="300">
+<p>Sweet and creamy coffee with chocolate and roasted hazelnut notes.</p>
+<p><strong>Price: £15.00</strong></p>
+</article>
+
+</section>
+<section class="search-box">
+<h2>Find Your Coffee</h2>
+<input type="text" id="coffeeSearch" placeholder="Search for a coffee...">
+</section>
+
+<footer>
+<p>&copy; 2026 Bean Boutique. All Rights Reserved.</p>
+<p>Fresh Coffee . Great Community . Better Moments</p>
+</footer>
+
+</main>
+<script>
+new Typed("#typed-text", {
+strings: [
+"Fresh coffee blends",
+"Single-origin coffee",
+"Roasted for great flavour"
+],
+typeSpeed: 60,
+backSpeed: 40,
+loop: true
+})
+</script>
+<script src="js/script.js"></script>
+<script>
+const searchInput = document.getElementById("coffeeSearch");
+const coffeeCards = document.querySelectorAll(".coffee-card");
+searchInput.addEventListener("input", function() {
+const searchText = searchInput.value.toLowerCase();
+coffeeCards.forEach(function(card) {
+const coffeeName = card.querySelector("h3").textContent.toLowerCase();
+if (coffeeName.includes(searchText)) {
+card.style.display = "block"
+} else {
+card.style.display = "none";
+}
+})
+})
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+</body>
+</html>
+
+
+ 

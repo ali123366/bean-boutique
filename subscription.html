@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers & Subscriptions - Bean Boutique</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<h1>Bean Boutique</h1>
+<p>Speciality Coffee & Community</p>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="coffee.html">Coffee Selection</a>
+<a href="equipment.html">Brewing Equipment</a>
+<a href="events.html">Events & Workshops</a>
+<a href="cart.html">Shopping Cart</a>
+<a href="subscription.html">Offers & Subscriptions</a>
+</nav>
+</header>
+
+<main>
+<section class="offers-intro">
+<h2>Special Offers & Subscription</h2>
+<p>Enjoy exclusive coffee offers and choose a subscription that suits your coffee routine.</p>
+</section>
+<section class="offers-grid">
+<h2>Special Offers</h2>
+<article class="offer-card">
+<div class="offer-icon">🎁</div>
+<h3>Weekend Special</h3>
+<p>Enjoy a special discount on selected coffee and brewing equipment.</p>
+<p><strong>Offer: 15% Off</strong></p>
+</article>
+<article class="offer-card">
+<div class="offer-icon">⭐</div>
+<h3>Premium Subscription</h3>
+<p>Receive freshly selected coffee every month with free delivery.</p>
+<p><strong>Price: £20.00 / month</strong></p>
+</article>
+</section>
+
+<section class="subscription-levels">
+<h2>Choose Your Subscription</h2>
+<p>Select a plan and enjoy regular coffee delivered to your door.</p>
+<div class="subscription-grid">
+<article class="subscription-card">
+<h3>Basic</h3>
+<p><strong>£15.00 / month</strong></p>
+<p>One cofee bag every month.</p>
+<p>Monthly tasting guide.</p>
+<button type="button">Choose Basic</button>
+</article>
+<article class="subscription-card">
+<h3>Premium</h3>
+<p><strong>£25.00 / month</strong></p>
+<p>Two coffee bags every month.</p>
+<p>Free delivery and tasting guide.</p>
+<button type="button">Choose Premium</button>
+</article>
+<article class="subscription-card">
+<h3>Delux</h3>
+<p><strong>£35.00 / month</strong></p>
+<p>Three coffee bags every month with free delivery and tasting guide.</p>
+<p>Enjoy a premium coffee experience every month.</p>
+<button type="button">Choose Delux</button>
+</article>
+
+</div>
+</section>
+<section class="subscription-benefits">
+<h2>Subscription Benefits</h2>
+<p>Subscribers enjoy regular coffee deliveries, special discounts and early access to new blends.</p>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Bean Boutique All Rights Reserved.</p>
+<p>Fresh Coffee . Great Community . Better Moments</p>
+</footer>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+document.querySelectorAll(".subscription-card button").forEach(function(button) {
+button.addEventListener("click", function() {
+Swal.fire("Subscription Selected!", "Thank you for choosing Bean Boutique.", "success");
+});
+});
+</script>
+</body>
+</html>
